@@ -2,7 +2,7 @@ function App() {
   return (
     <div className="flex flex-col items-center justify-center text-center max-w-screen-lg mx-auto">
 
-      <h1 className="mt-20 steel-text">
+      <h1 className="my-40 steel-text">
         <div className="text-7xl">Steel Man</div>
         <div className="text-5xl">Conversations</div>
       </h1>
@@ -10,7 +10,6 @@ function App() {
       <img
         src="/SteelmanConversations/Tucker-Crux-Lex.png"
         alt="Tucker Carlson, Lex Fridman, and Ted Cruz"
-        className="mt-10"
       />
 
       <div className="steel-text my-60">
@@ -75,7 +74,7 @@ function App() {
 
 const VerticalLine = () => {
   return (
-    <div className="w-px h-50 bg-gray-300 mx-auto my-8"></div>
+    <div className="w-px h-100 bg-gray-300 mx-auto my-8"></div>
   )
 }
 
