@@ -1,12 +1,17 @@
 @import "tailwindcss";
 
+/* Custom class that inherits from Tailwind */
+.steel-text {
+  @apply font-bold bg-clip-text text-transparent bg-gradient-to-br from-gray-400 via-gray-50 to-gray-400 text-3xl;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: #9ca3af;
   background-color: black;
 
   font-synthesis: none;
