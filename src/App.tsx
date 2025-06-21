@@ -12,62 +12,65 @@ function App() {
         alt="Tucker Carlson, Lex Fridman, and Ted Cruz"
       />
 
-      <div className="steel-text my-60">
-        <p className="text-3xl">
-          Bringing high-quality conversations to the world
-        </p>
+      <div className="mt-60 mb-120">
+        <TextSection
+          title="Bringing high-quality conversations to the world"
+        />
 
         <VerticalLine />
 
-        <p className="mt-6 text-3xl">
-          Guiding the Quality
-        </p>
-        <p className="mt-6 text-xl">
-          Identify the fallacies
-        </p>
-        <p className="mt-6 text-xl">
-          Ask to steel-man the other side
-        </p>
-        <p className="mt-6 text-xl">
-          Search for areas of agreement
-        </p>
+        <TextSection
+          title="Guiding the Quality"
+          points={[
+            "Identify the fallacies",
+            "Ask to steel-man the other side",
+            "Search for areas of agreement",
+          ]}
+        />
 
         <VerticalLine />
 
-        <p className="mt-6 text-3xl">
-          Audience Engagement
-        </p>
-        <p className="mt-6 text-xl">
-          Flag the fallacies
-        </p>
-        <p className="mt-6 text-xl">
-          Challenge with questions
-        </p>
-        <p className="mt-6 text-xl">
-          Vote on conversation quality
-        </p>
+        <TextSection
+          title="Audience Engagement"
+          points={[
+            "Flag the fallacies",
+            "Challenge with questions",
+            "Vote on conversation quality",
+          ]}
+        />
 
         <VerticalLine />
 
-        <p className="mt-6 text-3xl">
-          Evidence Revealed
-        </p>
-        <p className="mt-6 text-xl">
-          Present the sources
-        </p>
-        <p className="mt-6 text-xl">
-          Provide to the viewers
-        </p>
-        <p className="mt-6 text-xl">
-          Discuss the caveats
-        </p>
+        <TextSection
+          title="Evidence Revealed"
+          points={[
+            "Present the sources",
+            "Provide to the viewers",
+            "Discuss the caveats",
+          ]}
+        />
 
         <VerticalLine />
 
-        <p className="mt-6 mb-60 text-3xl">
-          Seek not to win, but to deepen understanding
-        </p>
+        <TextSection
+          title="Seek not to win, but to deepen understanding"
+        />
       </div>
+    </div>
+  )
+}
+
+const TextSection = ({ title, points }: { title: string, points?: string[] }) => {
+  return (
+    <div className="steel-text">
+      <p className="mt-6 text-4xl">
+        {title}
+      </p>
+      {points && points.map((point, index) => (
+        <p key={index} className="mt-6 text-2xl">
+          {point}
+        </p>
+      ))}
     </div>
   )
 }
