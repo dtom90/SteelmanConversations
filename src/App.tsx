@@ -1,6 +1,6 @@
 function App() {
   return (
-    <div className="flex flex-col items-center justify-center text-center max-w-screen-lg mx-auto">
+    <div className="flex flex-col items-center justify-center text-center max-w-screen-md xl:max-w-screen-lg mx-auto">
 
       <h1 className="my-40 steel-text">
         <div className="text-7xl">Steel Man</div>
@@ -20,6 +20,46 @@ function App() {
         <VerticalLine />
 
         <TextSection
+          title="Fallacy Flagging"
+          points={[
+            "Identify fallacies",
+            "Present them on screen",
+            'Repeat fallacies earn "fallacy badges"',
+          ]}
+        />
+        <div className="relative">
+          <img
+            src="/SteelmanConversations/DaveSmith-DouglasMurray-Lex.png"
+            alt="Dave Smith, Douglas Murray, and Lex Fridman"
+          />
+          
+          <div className="flex flex-col items-center bg-gray-800 absolute bottom-0 w-full opacity-90">
+            <div className="flex justify-center items-center">
+              <div className="w-[75px] h-[30px]"></div>
+              <span className="text-2xl mr-4 text-white">Fallacy: Appeal to Authority</span>
+              <img
+                src="/SteelmanConversations/Rhetological-Fallacies-10-Authority.png"
+                alt="Rhetological-Fallacies-10-Authority.png"
+                width={75}
+                height={75}
+              />
+            </div>
+            <div className="flex justify-center pt-2 pb-4">
+              <span>Claiming something is true because an 'expert', whether qualified or not, says it is.</span>
+              <a href="https://informationisbeautiful.net/visualizations/rhetological-fallacies/" 
+                 target="_blank" rel="noopener noreferrer" className="ml-2 flex items-center">
+                Learn more 
+                <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <VerticalLine />
+
+        <TextSection
           title="Guiding the Quality"
           points={[
             "Identify the fallacies",
@@ -27,28 +67,6 @@ function App() {
             "Search for areas of agreement",
           ]}
         />
-        <img
-          src="/SteelmanConversations/DaveSmith-DouglasMurray-Lex.png"
-          alt="Dave Smith, Douglas Murray, and Lex Fridman"
-        />
-        <div className="flex flex-col items-center bg-gray-800 pb-4">
-          <div className="flex justify-center items-center">
-            <span className="text-2xl mr-4 text-white">Fallacy: Appeal to Authority</span>
-            <img
-              src="/SteelmanConversations/Rhetological-Fallacies-10-Authority.png"
-              alt="Rhetological-Fallacies-10-Authority.png"
-              width={100}
-              height={100}
-            />
-          </div>
-          <div className="flex justify-center mt-2">
-            <span>Claiming something is true because an 'expert',</span>
-          </div>
-          <div className="flex justify-center">
-            <span>whether qualified or not, says it is.</span>
-          </div>
-        </div>
-
         <VerticalLine />
 
         <TextSection
