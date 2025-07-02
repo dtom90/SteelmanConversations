@@ -83,7 +83,7 @@ function App() {
 
 const TextSection = ({ title, points }: { title: string, points?: string[] }) => {
   return (
-    <div className="steel-text z-10">
+    <div className="steel-text my-2">
       <p className="mt-6 text-4xl">
         {title}
       </p>
@@ -98,7 +98,7 @@ const TextSection = ({ title, points }: { title: string, points?: string[] }) =>
 
 const VerticalLine = () => {
   return (
-    <div className="w-px h-100 bg-gray-300 mx-auto my-8 z-0"></div>
+    <div className="w-px h-100 bg-gray-300 mx-auto my-8"></div>
   )
 }
 
