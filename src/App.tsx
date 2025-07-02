@@ -4,7 +4,7 @@ function App() {
 
       <h1 className="my-40 steel-text">
         <div className="text-7xl">Steel Man</div>
-        <div className="text-5xl">Conversations</div>
+        <div className="text-7xl">Debates</div>
       </h1>
 
       <img
@@ -14,7 +14,7 @@ function App() {
 
       <div className="mt-60 mb-120">
         <TextSection
-          title="Bringing high-quality conversations to the world"
+          title="Bringing high-quality conversations to humanity"
         />
 
         <VerticalLine />
@@ -27,6 +27,27 @@ function App() {
             "Search for areas of agreement",
           ]}
         />
+        <img
+          src="/SteelmanConversations/DaveSmith-DouglasMurray-Lex.png"
+          alt="Dave Smith, Douglas Murray, and Lex Fridman"
+        />
+        <div className="flex flex-col items-center bg-gray-800 pb-4">
+          <div className="flex justify-center items-center">
+            <span className="text-2xl mr-4 text-white">Fallacy: Appeal to Authority</span>
+            <img
+              src="/SteelmanConversations/Rhetological-Fallacies-10-Authority.png"
+              alt="Rhetological-Fallacies-10-Authority.png"
+              width={100}
+              height={100}
+            />
+          </div>
+          <div className="flex justify-center mt-2">
+            <span>Claiming something is true because an 'expert',</span>
+          </div>
+          <div className="flex justify-center">
+            <span>whether qualified or not, says it is.</span>
+          </div>
+        </div>
 
         <VerticalLine />
 
