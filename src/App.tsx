@@ -24,15 +24,21 @@ function App() {
           points={[
             "Identify fallacies",
             "Present them on screen",
-            'Repeat fallacies earn "fallacy badges"',
+            "Indicate to the instigator of the fallacy",
           ]}
         />
         <div className="relative">
-          <img
-            src="/SteelmanConversations/DaveSmith-DouglasMurray-Lex.png"
-            alt="Dave Smith, Douglas Murray, and Lex Fridman"
-          />
-          
+                      <video
+              src="/SteelmanConversations/DaveSmith-DouglasMurray-Lex.mp4"
+              autoPlay={true}
+              loop={true}
+              muted={true}
+              playsInline={true}
+              className="w-full"
+            >
+            Your browser does not support the video tag.
+          </video>
+
           <div className="flex flex-col items-center bg-gray-800 absolute bottom-0 w-full opacity-90">
             <div className="flex justify-center items-center">
               <div className="w-[75px] h-[30px]"></div>
@@ -62,9 +68,9 @@ function App() {
         <TextSection
           title="Guiding the Quality"
           points={[
-            "Identify the fallacies",
-            "Ask to steel-man the other side",
+            "Present the claims on the screen",
             "Search for areas of agreement",
+            "Ask to steel-man the other side",
           ]}
         />
         <VerticalLine />
