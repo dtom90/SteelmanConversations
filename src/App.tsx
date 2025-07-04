@@ -61,20 +61,13 @@ function App() {
           ]}
           image="BenShapiro-Desitiny-Lex.png"
           banner={
-            <div className="flex justify-center items-center bg-gray-800 opacity-90 text-2xl text-white">
-              <div className="flex flex-col justify-center items-center ml-6 mr-12">
-                <i className="fas fa-check text-green-400 text-4xl font-bold"></i>
-                <span className="text-sm">Ben Shapiro</span>
-              </div>
-              <div>
-                <div className="font-bold">Claim:</div>
-                <div className="font-normal">The world was more peaceful under Trump than under Biden</div>
-              </div>
-              <div className="flex flex-col justify-center items-center ml-12 mr-6">
-                <i className="fas fa-question text-yellow-400 text-4xl font-bold"></i>
-                <span className="text-sm">Destiny</span>
-              </div>
-            </div>
+            <ClaimBanner 
+              person1Name="Ben Shapiro"
+              person2Name="Destiny"
+              claimText="The world was more peaceful under Trump than under Biden"
+              person1Agreement={Agreement.YES}
+              person2Agreement={Agreement.UNKNOWN}
+            />
           }
         />
 
@@ -87,6 +80,16 @@ function App() {
             "Ask each side to steel-man the other side",
             "Ask each side if they are satisfied with the steel-man",
           ]}
+          image="Tucker-Crux-LexTalking.png"
+          banner={
+            <ClaimBanner 
+              person1Name="Tucker Carlson"
+              person2Name="Ted Cruz"
+              claimText="If Iran were to acquire a nuclear weapon, American lives would be at risk"
+              person1Agreement={Agreement.NO}
+              person2Agreement={Agreement.YES}
+            />
+          }
         />
 
         <VerticalLine />
@@ -116,6 +119,61 @@ function App() {
         <TextSection
           title="Seek not to win, but to deepen understanding"
         />
+      </div>
+    </div>
+  )
+}
+
+enum Agreement {
+  YES = "yes",
+  NO = "no",
+  UNKNOWN = "unknown"
+}
+
+const ClaimBanner = ({ 
+  person1Name, 
+  person2Name, 
+  claimText,
+  person1Agreement,
+  person2Agreement
+}: {
+  person1Name: string;
+  person2Name: string;
+  claimText: string;
+  person1Agreement: Agreement;
+  person2Agreement: Agreement;
+}) => {
+  const getIconAndColor = (agreement: Agreement) => {
+    switch (agreement) {
+      case Agreement.YES:
+        return { icon: "fas fa-check", color: "bg-green-400" };
+      case Agreement.NO:
+        return { icon: "fas fa-times", color: "bg-red-400" };
+      case Agreement.UNKNOWN:
+        return { icon: "fas fa-question", color: "bg-gray-400" };
+    }
+  };
+
+  const person1Icon = getIconAndColor(person1Agreement);
+  const person2Icon = getIconAndColor(person2Agreement);
+
+  return (
+    <div className="flex justify-center items-center bg-gray-800 opacity-90 text-2xl text-white">
+      <div className="flex-1 flex flex-col justify-center items-center ml-6 mr-12">
+        <div className={`${person1Icon.color} w-16 h-16 rounded-full flex items-center justify-center`}>
+          <i className={`${person1Icon.icon} text-white text-4xl font-bold`}></i>
+        </div>
+        <span className="text-sm mt-2">{person1Name}</span>
+      </div>
+      <div className="flex-2">
+        <div className="font-bold">Claim:</div>
+        <div className="font-normal">{claimText}</div>
+      </div>
+      <div className="flex-1 flex flex-col justify-center items-center ml-12">
+        <div className={`${person2Icon.color} w-16 h-16 rounded-full flex items-center justify-center`}>
+          <i className={`${person2Icon.icon} text-white text-4xl font-bold`}></i>
+        </div>
+        <span className="text-sm mt-2">{person2Name}</span>
       </div>
     </div>
   )
