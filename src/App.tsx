@@ -24,25 +24,18 @@ function App() {
           points={[
             "Identify fallacies",
             "Present them on screen",
-            "Indicate to the instigator of the fallacy",
           ]}
         />
         <div className="relative">
-                      <video
-              src="/SteelmanConversations/DaveSmith-DouglasMurray-Lex.mp4"
-              autoPlay={true}
-              loop={true}
-              muted={true}
-              playsInline={true}
-              className="w-full"
-            >
-            Your browser does not support the video tag.
-          </video>
+          <img
+            src="/SteelmanConversations/DaveSmith-DouglasMurray-Lex.png"
+            alt="Dave Smith, Douglas Murray, and Lex Fridman"
+          />
 
           <div className="flex flex-col items-center bg-gray-800 absolute bottom-0 w-full opacity-90">
             <div className="flex justify-center items-center">
               <div className="w-[75px] h-[30px]"></div>
-              <span className="text-2xl mr-4 text-white">Fallacy: Appeal to Authority</span>
+              <span className="text-2xl mr-4">Fallacy: Appeal to Authority</span>
               <img
                 src="/SteelmanConversations/Rhetological-Fallacies-10-Authority.png"
                 alt="Rhetological-Fallacies-10-Authority.png"
@@ -55,10 +48,38 @@ function App() {
               <a href="https://informationisbeautiful.net/visualizations/rhetological-fallacies/" 
                  target="_blank" rel="noopener noreferrer" className="ml-2 flex items-center">
                 Learn more 
-                <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
+                <i className="fas fa-external-link-alt ml-1"></i>
               </a>
+            </div>
+          </div>
+        </div>
+
+        <VerticalLine />
+
+        <TextSection
+          title="Establish the Claims"
+          points={[
+            "Present the claims on the screen",
+            "Establish positions on the claims",
+          ]}
+        />
+        <div className="relative">
+          <img
+            src="/SteelmanConversations/BenShapiro-Desitiny-Lex.png"
+            alt="Ben Shapiro, Destiny, and Lex Fridman"
+          />
+          
+          <div className="flex flex-col items-center absolute bottom-10 w-full">
+            <div className="flex justify-center items-center bg-gray-800 opacity-90 py-4 text-2xl text-white">
+              <div className="flex flex-col justify-center items-center ml-6 mr-12">
+                <i className="fas fa-check text-green-400 text-4xl font-bold"></i>
+                <span className="text-sm">Ben Shapiro</span>
+              </div>
+              <span>Claim: The world was more peaceful under Trump than under Biden</span>
+              <div className="flex flex-col justify-center items-center ml-12 mr-6">
+                <i className="fas fa-question text-yellow-400 text-4xl font-bold"></i>
+                <span className="text-sm">Destiny</span>
+              </div>
             </div>
           </div>
         </div>
@@ -73,6 +94,7 @@ function App() {
             "Ask to steel-man the other side",
           ]}
         />
+
         <VerticalLine />
 
         <TextSection
