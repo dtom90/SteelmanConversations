@@ -13,13 +13,13 @@ function App() {
       />
 
       <div className="mt-60 mb-120">
-        <TextSection
+        <Section
           title="Bringing high-quality conversations to humanity"
         />
 
         <VerticalLine />
 
-        <TextSection
+        <Section
           title="Fallacy Flagging"
           points={[
             "Identify fallacies",
@@ -53,7 +53,7 @@ function App() {
 
         <VerticalLine />
 
-        <TextSection
+        <Section
           title="Establish the Claims"
           points={[
             "Present the claims on the screen",
@@ -73,7 +73,7 @@ function App() {
 
         <VerticalLine />
 
-        <TextSection
+        <Section
           title="Steel man the opponent"
           points={[
             "Establish claims with disagreement",
@@ -94,7 +94,7 @@ function App() {
 
         <VerticalLine />
 
-        <TextSection
+        <Section
           title="Audience Engagement"
           points={[
             "Flag the fallacies",
@@ -105,7 +105,7 @@ function App() {
 
         <VerticalLine />
 
-        <TextSection
+        <Section
           title="Evidence Revealed"
           points={[
             "Present the sources",
@@ -116,7 +116,7 @@ function App() {
 
         <VerticalLine />
 
-        <TextSection
+        <Section
           title="Seek not to win, but to deepen understanding"
         />
       </div>
@@ -179,7 +179,7 @@ const ClaimBanner = ({
   )
 }
 
-const TextSection = ({ title, points, image, banner }: { title: string, points?: string[], image?: string, banner?: React.ReactNode }) => {
+const Section = ({ title, points, image, banner }: { title: string, points?: string[], image?: string, banner?: React.ReactNode }) => {
   return (
     <div className="steel-text pb-2">
       <p className="mt-6 text-4xl">
