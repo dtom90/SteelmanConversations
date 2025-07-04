@@ -17,8 +17,6 @@ function App() {
           title="Bringing high-quality conversations to humanity"
         />
 
-        <VerticalLine />
-
         <Section
           title="Fallacy Flagging"
           points={[
@@ -51,8 +49,6 @@ function App() {
           }
         />
 
-        <VerticalLine />
-
         <Section
           title="Establish the Claims"
           points={[
@@ -71,10 +67,8 @@ function App() {
           }
         />
 
-        <VerticalLine />
-
         <Section
-          title="Steel man the opponent"
+          title="Steel Man"
           points={[
             "Establish claims with disagreement",
             "Ask each side to steel-man the other side",
@@ -92,29 +86,23 @@ function App() {
           }
         />
 
-        <VerticalLine />
-
         <Section
-          title="Audience Engagement"
+          title="Audience Participation"
           points={[
-            "Flag the fallacies",
-            "Challenge with questions",
+            "Ask questions",
+            "Flag observed fallacies",
             "Vote on conversation quality",
           ]}
         />
 
-        <VerticalLine />
-
         <Section
-          title="Evidence Revealed"
+          title="Open-Source Evidence"
           points={[
-            "Present the sources",
-            "Provide to the viewers",
-            "Discuss the caveats",
+            "Exchange sources beforehand",
+            "Provide sources to the viewers",
+            "Discuss the caveats of the sources",
           ]}
         />
-
-        <VerticalLine />
 
         <Section
           title="Seek not to win, but to deepen understanding"
@@ -180,7 +168,7 @@ const ClaimBanner = ({
 }
 
 const Section = ({ title, points, image, banner }: { title: string, points?: string[], image?: string, banner?: React.ReactNode }) => {
-  return (
+  return (<>
     <div className="steel-text pb-2">
       <p className="mt-6 text-4xl">
         {title}
@@ -199,6 +187,9 @@ const Section = ({ title, points, image, banner }: { title: string, points?: str
         </div>}
       </div>}
     </div>
+
+    <VerticalLine />
+    </>
   )
 }
 
