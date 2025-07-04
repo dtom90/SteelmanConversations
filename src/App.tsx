@@ -24,6 +24,7 @@ function App() {
           points={[
             "Identify fallacies",
             "Present them on screen",
+            "Point them out and bring discussion back on track",
           ]}
         />
         <div className="relative">
@@ -87,11 +88,11 @@ function App() {
         <VerticalLine />
 
         <TextSection
-          title="Guiding the Quality"
+          title="Steel man the opponent"
           points={[
-            "Present the claims on the screen",
-            "Search for areas of agreement",
-            "Ask to steel-man the other side",
+            "Establish claims with disagreement",
+            "Ask each side to steel-man the other side",
+            "Ask each side if they are satisfied with the steel-man",
           ]}
         />
 
