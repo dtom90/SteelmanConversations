@@ -26,34 +26,30 @@ function App() {
             "Present them on screen",
             "Point them out and bring discussion back on track",
           ]}
+          image="DaveSmith-DouglasMurray-Lex.png"
+          banner={
+            <div>
+              <div className="flex justify-center items-center">
+                <div className="w-[75px] h-[30px]"></div>
+                <span className="text-2xl mr-4">Fallacy: Appeal to Authority</span>
+                <img
+                  src="/SteelmanConversations/Rhetological-Fallacies-10-Authority.png"
+                  alt="Rhetological-Fallacies-10-Authority.png"
+                  width={75}
+                  height={75}
+                />
+              </div>
+              <div className="flex justify-center pt-2">
+                <span>Claiming something is true because an 'expert', whether qualified or not, says it is.</span>
+                <a href="https://informationisbeautiful.net/visualizations/rhetological-fallacies/" 
+                  target="_blank" rel="noopener noreferrer" className="ml-2 flex items-center">
+                  Learn more 
+                  <i className="fas fa-external-link-alt ml-1"></i>
+                </a>
+              </div>
+            </div>
+          }
         />
-        <div className="relative">
-          <img
-            src="/SteelmanConversations/DaveSmith-DouglasMurray-Lex.png"
-            alt="Dave Smith, Douglas Murray, and Lex Fridman"
-          />
-
-          <div className="flex flex-col items-center bg-gray-800 absolute bottom-0 w-full opacity-90">
-            <div className="flex justify-center items-center">
-              <div className="w-[75px] h-[30px]"></div>
-              <span className="text-2xl mr-4">Fallacy: Appeal to Authority</span>
-              <img
-                src="/SteelmanConversations/Rhetological-Fallacies-10-Authority.png"
-                alt="Rhetological-Fallacies-10-Authority.png"
-                width={75}
-                height={75}
-              />
-            </div>
-            <div className="flex justify-center pt-2 pb-4">
-              <span>Claiming something is true because an 'expert', whether qualified or not, says it is.</span>
-              <a href="https://informationisbeautiful.net/visualizations/rhetological-fallacies/" 
-                 target="_blank" rel="noopener noreferrer" className="ml-2 flex items-center">
-                Learn more 
-                <i className="fas fa-external-link-alt ml-1"></i>
-              </a>
-            </div>
-          </div>
-        </div>
 
         <VerticalLine />
 
@@ -61,29 +57,26 @@ function App() {
           title="Establish the Claims"
           points={[
             "Present the claims on the screen",
-            "Establish positions on the claims",
+            "Clarify positions on the claims",
           ]}
-        />
-        <div className="relative">
-          <img
-            src="/SteelmanConversations/BenShapiro-Desitiny-Lex.png"
-            alt="Ben Shapiro, Destiny, and Lex Fridman"
-          />
-          
-          <div className="flex flex-col items-center absolute bottom-10 w-full">
-            <div className="flex justify-center items-center bg-gray-800 opacity-90 py-4 text-2xl text-white">
+          image="BenShapiro-Desitiny-Lex.png"
+          banner={
+            <div className="flex justify-center items-center bg-gray-800 opacity-90 text-2xl text-white">
               <div className="flex flex-col justify-center items-center ml-6 mr-12">
                 <i className="fas fa-check text-green-400 text-4xl font-bold"></i>
                 <span className="text-sm">Ben Shapiro</span>
               </div>
-              <span>Claim: The world was more peaceful under Trump than under Biden</span>
+              <div>
+                <div className="font-bold">Claim:</div>
+                <div className="font-normal">The world was more peaceful under Trump than under Biden</div>
+              </div>
               <div className="flex flex-col justify-center items-center ml-12 mr-6">
                 <i className="fas fa-question text-yellow-400 text-4xl font-bold"></i>
                 <span className="text-sm">Destiny</span>
               </div>
             </div>
-          </div>
-        </div>
+          }
+        />
 
         <VerticalLine />
 
@@ -128,7 +121,7 @@ function App() {
   )
 }
 
-const TextSection = ({ title, points }: { title: string, points?: string[] }) => {
+const TextSection = ({ title, points, image, banner }: { title: string, points?: string[], image?: string, banner?: React.ReactNode }) => {
   return (
     <div className="steel-text pb-2">
       <p className="mt-6 text-4xl">
@@ -139,6 +132,14 @@ const TextSection = ({ title, points }: { title: string, points?: string[] }) =>
           {point}
         </p>
       ))}
+      {image && <div className="relative">
+        <img src={`/SteelmanConversations/${image}`} alt={title} />
+        {banner && <div className="flex flex-col items-center absolute bottom-0 w-full bg-gray-800 opacity-90">
+          <div className="flex justify-center items-center py-4 text-white">
+            {banner}
+          </div>
+        </div>}
+      </div>}
     </div>
   )
 }
