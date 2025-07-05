@@ -1,4 +1,5 @@
 import React from 'react';
+import FadeIn from './FadeIn';
 
 interface SectionProps {
   title: string;
@@ -11,7 +12,7 @@ interface SectionProps {
 
 const Section = ({ title, points, image, banner, description, verticalLine = true }: SectionProps) => {
   return (<>
-    <div className="steel-text pb-2">
+    <FadeIn className="steel-text pb-2">
       <p className="mt-6 text-4xl">
         {title}
       </p>
@@ -28,13 +29,17 @@ const Section = ({ title, points, image, banner, description, verticalLine = tru
           </div>
         </div>}
       </div>}
-    </div>
+    </FadeIn>
 
     {description && <div className="mt-6">
       {description}
     </div>}
 
-    {verticalLine && <VerticalLine />}
+    {verticalLine && 
+      <FadeIn>
+        <VerticalLine />
+      </FadeIn>
+    }
     </>
   )
 }

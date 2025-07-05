@@ -4,21 +4,24 @@ import FallacyBanner from './components/banners/FallacyBanner';
 import SourceBanner from './components/banners/SourceBanner';
 import VoteBanner from './components/banners/VoteBanner';
 import Sources from './components/Sources';
+import FadeIn from './components/FadeIn';
 
 
 function App() {
   return (
     <div className="flex flex-col items-center justify-center text-center max-w-screen-md xl:max-w-screen-lg mx-auto">
 
-      <h1 className="my-40 steel-text">
+      <FadeIn className="my-40 steel-text">
         <div className="text-7xl">Steel Man</div>
         <div className="text-7xl">Debates</div>
-      </h1>
+      </FadeIn>
 
-      <img
-        src="/SteelmanConversations/Tucker-Crux-Lex.png"
-        alt="Tucker Carlson, Lex Fridman, and Ted Cruz"
-      />
+      <FadeIn>
+        <img
+          src="/SteelmanConversations/Tucker-Crux-Lex.png"
+          alt="Tucker Carlson, Lex Fridman, and Ted Cruz"
+        />
+      </FadeIn>
 
       <div className="mt-60 mb-120">
         <Section
