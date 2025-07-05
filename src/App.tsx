@@ -2,6 +2,7 @@ import Section from './components/Section';
 import ClaimBanner, { Agreement } from './components/banners/ClaimBanner';
 import FallacyBanner from './components/banners/FallacyBanner';
 import SourceBanner from './components/banners/SourceBanner';
+import Sources from './components/Sources';
 
 function App() {
   return (
@@ -90,6 +91,9 @@ function App() {
               sourceTitle="IAEA: Verification and Monitoring in Iran"
               sourceUrl="https://www.iaea.org/newscenter/focus/iran"
             />
+          }
+          description={
+            <Sources />
           }
         />
 

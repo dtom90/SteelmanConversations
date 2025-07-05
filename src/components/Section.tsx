@@ -5,9 +5,10 @@ interface SectionProps {
   points?: string[];
   image?: string;
   banner?: React.ReactNode;
+  description?: React.ReactNode;
 }
 
-const Section = ({ title, points, image, banner }: SectionProps) => {
+const Section = ({ title, points, image, banner, description }: SectionProps) => {
   return (<>
     <div className="steel-text pb-2">
       <p className="mt-6 text-4xl">
@@ -27,6 +28,10 @@ const Section = ({ title, points, image, banner }: SectionProps) => {
         </div>}
       </div>}
     </div>
+
+    {description && <div className="mt-6">
+      {description}
+    </div>}
 
     <VerticalLine />
     </>
