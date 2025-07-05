@@ -146,8 +146,8 @@ const ClaimBanner = ({
   const person2Icon = getIconAndColor(person2Agreement);
 
   return (
-    <div className="flex justify-center items-center bg-gray-800 opacity-90 text-2xl text-white">
-      <div className="flex-1 flex flex-col justify-center items-center ml-6 mr-12">
+    <div className="flex text-2xl">
+      <div className="flex-1 flex flex-col justify-center items-center">
         <div className={`${person1Icon.color} w-16 h-16 rounded-full flex items-center justify-center`}>
           <i className={`${person1Icon.icon} text-white text-4xl font-bold`}></i>
         </div>
@@ -157,7 +157,7 @@ const ClaimBanner = ({
         <div className="font-bold">Claim:</div>
         <div className="font-normal">{claimText}</div>
       </div>
-      <div className="flex-1 flex flex-col justify-center items-center ml-12">
+      <div className="flex-1 flex flex-col justify-center items-center">
         <div className={`${person2Icon.color} w-16 h-16 rounded-full flex items-center justify-center`}>
           <i className={`${person2Icon.icon} text-white text-4xl font-bold`}></i>
         </div>
@@ -180,8 +180,8 @@ const Section = ({ title, points, image, banner }: { title: string, points?: str
       ))}
       {image && <div className="relative">
         <img src={`/SteelmanConversations/${image}`} alt={title} />
-        {banner && <div className="flex flex-col items-center absolute bottom-0 w-full bg-gray-800 opacity-90">
-          <div className="flex justify-center items-center py-4 text-white">
+        {banner && <div className="flex flex-col items-center absolute bottom-0 w-full bg-gray-800 text-white opacity-90 py-4">
+          <div className="w-full">
             {banner}
           </div>
         </div>}
