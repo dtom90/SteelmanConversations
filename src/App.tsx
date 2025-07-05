@@ -1,3 +1,8 @@
+import Section from './components/Section';
+import ClaimBanner, { Agreement } from './components/banners/ClaimBanner';
+import FallacyBanner from './components/banners/FallacyBanner';
+import SourceBanner from './components/banners/SourceBanner';
+
 function App() {
   return (
     <div className="flex flex-col items-center justify-center text-center max-w-screen-md xl:max-w-screen-lg mx-auto">
@@ -26,26 +31,12 @@ function App() {
           ]}
           image="DaveSmith-DouglasMurray-Lex.png"
           banner={
-            <div>
-              <div className="flex justify-center items-center">
-                <div className="w-[75px] h-[30px]"></div>
-                <span className="text-2xl mr-4">Fallacy: Appeal to Authority</span>
-                <img
-                  src="/SteelmanConversations/Rhetological-Fallacies-10-Authority.png"
-                  alt="Rhetological-Fallacies-10-Authority.png"
-                  width={75}
-                  height={75}
-                />
-              </div>
-              <div className="flex justify-center pt-2">
-                <span>Claiming something is true because an 'expert', whether qualified or not, says it is.</span>
-                <a href="https://informationisbeautiful.net/visualizations/rhetological-fallacies/" 
-                  target="_blank" rel="noopener noreferrer" className="ml-2 flex items-center">
-                  Learn more 
-                  <i className="fas fa-external-link-alt ml-1"></i>
-                </a>
-              </div>
-            </div>
+            <FallacyBanner
+              fallacyName="Appeal to Authority"
+              description="Claiming something is true because an 'expert', whether qualified or not, says it is."
+              imageSrc="/SteelmanConversations/Rhetological-Fallacies-10-Authority.png"
+              learnMoreUrl="https://informationisbeautiful.net/visualizations/rhetological-fallacies/"
+            />
           }
         />
 
@@ -95,16 +86,10 @@ function App() {
           ]}
           image="ScottHorton-MarkDubowitz-Lex.png"
           banner={
-            <div className="text-2xl">
-              <div className="mb-2">
-                <i className="fas fa-book-open mr-2"></i>
-                <span>Source</span>
-              </div>
-              <a href="https://www.iaea.org/newscenter/focus/iran" target="_blank" rel="noopener noreferrer">
-                <span>IAEA: Verification and Monitoring in Iran</span>
-                <i className="fas fa-external-link-alt ml-1"></i>
-              </a>
-            </div>
+            <SourceBanner
+              sourceTitle="IAEA: Verification and Monitoring in Iran"
+              sourceUrl="https://www.iaea.org/newscenter/focus/iran"
+            />
           }
         />
 
@@ -125,91 +110,5 @@ function App() {
   )
 }
 
-enum Agreement {
-  YES = "yes",
-  NO = "no",
-  UNKNOWN = "unknown"
-}
-
-const ClaimBanner = ({ 
-  person1Name, 
-  person2Name, 
-  claimText,
-  person1Agreement,
-  person2Agreement
-}: {
-  person1Name: string;
-  person2Name: string;
-  claimText: string;
-  person1Agreement: Agreement;
-  person2Agreement: Agreement;
-}) => {
-  const getIconAndColor = (agreement: Agreement) => {
-    switch (agreement) {
-      case Agreement.YES:
-        return { icon: "fas fa-check", color: "bg-green-400" };
-      case Agreement.NO:
-        return { icon: "fas fa-times", color: "bg-red-400" };
-      case Agreement.UNKNOWN:
-        return { icon: "fas fa-question", color: "bg-gray-400" };
-    }
-  };
-
-  const person1Icon = getIconAndColor(person1Agreement);
-  const person2Icon = getIconAndColor(person2Agreement);
-
-  return (
-    <div className="flex text-2xl">
-      <div className="flex-1 flex flex-col justify-center items-center">
-        <div className={`${person1Icon.color} w-16 h-16 rounded-full flex items-center justify-center`}>
-          <i className={`${person1Icon.icon} text-white text-4xl font-bold`}></i>
-        </div>
-        <span className="text-sm mt-2">{person1Name}</span>
-      </div>
-      <div className="flex-2">
-        <div className="font-bold">Claim:</div>
-        <div className="font-normal">{claimText}</div>
-      </div>
-      <div className="flex-1 flex flex-col justify-center items-center">
-        <div className={`${person2Icon.color} w-16 h-16 rounded-full flex items-center justify-center`}>
-          <i className={`${person2Icon.icon} text-white text-4xl font-bold`}></i>
-        </div>
-        <span className="text-sm mt-2">{person2Name}</span>
-      </div>
-    </div>
-  )
-}
-
-const Section = ({ title, points, image, banner }: { title: string, points?: string[], image?: string, banner?: React.ReactNode }) => {
-  return (<>
-    <div className="steel-text pb-2">
-      <p className="mt-6 text-4xl">
-        {title}
-      </p>
-      {points && points.map((point, index) => (
-        <p key={index} className="mt-6 text-2xl">
-          {point}
-        </p>
-      ))}
-      {image && <div className="mt-6 relative">
-        <img src={`/SteelmanConversations/${image}`} alt={title} />
-        {banner && <div className="flex flex-col items-center absolute bottom-0 w-full bg-gray-800 text-white opacity-90 py-4">
-          <div className="w-full">
-            {banner}
-          </div>
-        </div>}
-      </div>}
-    </div>
-
-    <VerticalLine />
-    </>
-  )
-}
-
-const VerticalLine = () => {
-  return (
-    <div className="w-px h-100 bg-gray-300 mx-auto my-8"></div>
-  )
-}
 
 export default App
