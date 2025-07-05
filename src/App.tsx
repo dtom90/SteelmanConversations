@@ -87,20 +87,33 @@ function App() {
         />
 
         <Section
-          title="Audience Participation"
-          points={[
-            "Ask questions",
-            "Flag observed fallacies",
-            "Vote on conversation quality",
-          ]}
-        />
-
-        <Section
           title="Open-Source Evidence"
           points={[
             "Exchange sources beforehand",
             "Provide sources to the viewers",
             "Discuss the caveats of the sources",
+          ]}
+          image="ScottHorton-MarkDubowitz-Lex.png"
+          banner={
+            <div className="text-2xl">
+              <div className="mb-2">
+                <i className="fas fa-book-open mr-2"></i>
+                <span>Source</span>
+              </div>
+              <a href="https://www.iaea.org/newscenter/focus/iran" target="_blank" rel="noopener noreferrer">
+                <span>IAEA: Verification and Monitoring in Iran</span>
+                <i className="fas fa-external-link-alt ml-1"></i>
+              </a>
+            </div>
+          }
+        />
+
+        <Section
+          title="Audience Participation"
+          points={[
+            "Ask questions",
+            "Flag observed fallacies",
+            "Vote on conversation quality",
           ]}
         />
 
@@ -178,7 +191,7 @@ const Section = ({ title, points, image, banner }: { title: string, points?: str
           {point}
         </p>
       ))}
-      {image && <div className="relative">
+      {image && <div className="mt-6 relative">
         <img src={`/SteelmanConversations/${image}`} alt={title} />
         {banner && <div className="flex flex-col items-center absolute bottom-0 w-full bg-gray-800 text-white opacity-90 py-4">
           <div className="w-full">
