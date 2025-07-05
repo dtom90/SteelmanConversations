@@ -2,7 +2,9 @@ import Section from './components/Section';
 import ClaimBanner, { Agreement } from './components/banners/ClaimBanner';
 import FallacyBanner from './components/banners/FallacyBanner';
 import SourceBanner from './components/banners/SourceBanner';
+import VoteBanner from './components/banners/VoteBanner';
 import Sources from './components/Sources';
+
 
 function App() {
   return (
@@ -102,12 +104,22 @@ function App() {
           points={[
             "Ask questions",
             "Flag observed fallacies",
-            "Vote on conversation quality",
+            "Vote on who steel-manned the strongest",
           ]}
+          image="BernieSanders-WesleyHunt-Lex.png"
+          banner={
+            <VoteBanner />
+          }
         />
 
         <Section
           title="Seek not to win, but to deepen understanding"
+          verticalLine={false}
+        />
+        <Section
+          title="And to inspire curiosity"
+          verticalLine={false}
+          image="Tucker-Crux-ShakingHands.jpg"
         />
       </div>
     </div>
