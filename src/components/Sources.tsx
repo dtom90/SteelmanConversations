@@ -3,7 +3,7 @@ const SourceList = ({ speaker, sources }: { speaker: string; sources?: Array<{ u
     <div className="flex-1">
       <h2 className="text-xl">{speaker}'s Sources</h2>
       {sources && (
-        <ul className="list-disc ml-10">
+        <ol className="list-decimal ml-10">
           {sources.map((source, index) => (
             <li key={index} className="text-left">
               <a href={source.url} target="_blank" rel="noopener noreferrer">
@@ -12,7 +12,7 @@ const SourceList = ({ speaker, sources }: { speaker: string; sources?: Array<{ u
               </a>
             </li>
           ))}
-        </ul>
+        </ol>
       )}
     </div>
   )

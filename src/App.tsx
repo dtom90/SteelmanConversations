@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="flex flex-col items-center justify-center text-center max-w-screen-md xl:max-w-screen-lg mx-auto">
 
-      <FadeIn className="my-40 steel-text">
+      <FadeIn className="mt-40 mb-20 steel-text">
         <div className="text-7xl">Steel Man</div>
         <div className="text-7xl">Debates</div>
       </FadeIn>
@@ -93,7 +93,7 @@ function App() {
           image="ScottHorton-MarkDubowitz-Lex.png"
           banner={
             <SourceBanner
-              sourceTitle="IAEA: Verification and Monitoring in Iran"
+              sourceTitle="Verification and Monitoring in Iran - IAEA"
               sourceUrl="https://www.iaea.org/newscenter/focus/iran"
             />
           }
