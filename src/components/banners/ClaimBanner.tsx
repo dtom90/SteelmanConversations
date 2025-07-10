@@ -35,7 +35,7 @@ const ClaimBanner = ({
   const person2Icon = getIconAndColor(person2Agreement);
 
   return (
-    <div className="flex text-2xl">
+    <div className="flex">
       <div className="flex-1 flex flex-col justify-center items-center">
         <div className={`${person1Icon.color} w-16 h-16 rounded-full flex items-center justify-center`}>
           <i className={`${person1Icon.icon} text-white text-4xl font-bold`}></i>
@@ -43,8 +43,8 @@ const ClaimBanner = ({
         <span className="text-sm mt-2">{person1Name}</span>
       </div>
       <div className="flex-2">
-        <div className="font-bold">Claim:</div>
-        <div className="font-normal">{claimText}</div>
+        <div className="text-2xl steel-text">Claim:</div>
+        <div className="font-bold">{claimText}</div>
       </div>
       <div className="flex-1 flex flex-col justify-center items-center">
         <div className={`${person2Icon.color} w-16 h-16 rounded-full flex items-center justify-center`}>

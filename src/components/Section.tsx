@@ -11,13 +11,13 @@ interface SectionProps {
 }
 
 const Section = ({ title, points, image, banner, description, verticalLine = true }: SectionProps) => {
-  return (<>
-    <FadeIn className="steel-text pb-2">
+  return (<div>
+    <FadeIn>
       <p className="mt-6 text-4xl">
-        {title}
+        <span className='steel-text'>{title}</span>
       </p>
       {points && points.map((point, index) => (
-        <p key={index} className="mt-6 text-2xl">
+        <p key={index} className="mt-6 text-2xl font-bold">
           {point}
         </p>
       ))}
@@ -40,7 +40,7 @@ const Section = ({ title, points, image, banner, description, verticalLine = tru
         <VerticalLine />
       </FadeIn>
     }
-    </>
+    </div>
   )
 }
 

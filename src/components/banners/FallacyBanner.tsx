@@ -10,7 +10,7 @@ const FallacyBanner = ({ fallacyName, description, imageSrc, learnMoreUrl }: Fal
     <div>
       <div className="flex justify-center items-center">
         <div className="w-[75px] h-[30px]"></div>
-        <span className="text-2xl mr-4">Fallacy: {fallacyName}</span>
+        <span className="text-2xl mr-4 steel-text">Fallacy: {fallacyName}</span>
         <img
           src={imageSrc}
           alt={`${fallacyName} fallacy icon`}
@@ -19,7 +19,7 @@ const FallacyBanner = ({ fallacyName, description, imageSrc, learnMoreUrl }: Fal
         />
       </div>
       <div className="flex justify-center pt-2">
-        <span>{description}</span>
+        <span className="font-bold">{description}</span>
         <a href={learnMoreUrl} 
           target="_blank" rel="noopener noreferrer" className="ml-2 flex items-center">
           Learn more 

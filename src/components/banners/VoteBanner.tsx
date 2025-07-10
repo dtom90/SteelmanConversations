@@ -9,12 +9,12 @@ export default function VoteBanner() {
 
   return (
     <div>
-      <div className="text-2xl">Who debated with the most integrity?</div>
-      <div className="text-lg">Who steel-manned the strongest?</div>
-      <div className="text-lg">Who had the fewest fallacies?</div>
-      <div className="text-lg italic">(Regardless of which side you agree with)</div>
+      <div className="text-2xl steel-text">Who debated with the most integrity?</div>
+      <div className="font-bold">Who steel-manned the strongest?</div>
+      <div className="font-bold">Who had the fewest fallacies?</div>
+      <div className="font-bold italic">(Regardless of which side you agree with)</div>
 
-      <div className="flex text-xl">
+      <div className="flex font-bold">
         <div className="flex-1">
           <div>Senator Bernie Sanders</div>
           <button 

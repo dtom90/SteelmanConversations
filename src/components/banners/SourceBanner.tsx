@@ -5,8 +5,8 @@ interface SourceBannerProps {
 
 const SourceBanner = ({ sourceTitle, sourceUrl }: SourceBannerProps) => {
   return (
-    <div className="text-2xl">
-      <div className="mb-2">
+    <div>
+      <div className="text-2xl steel-text mb-2">
         <i className="fas fa-book-open mr-2"></i>
         <span>Source</span>
       </div>
